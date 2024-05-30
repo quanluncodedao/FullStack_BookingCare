@@ -3,36 +3,33 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { emitter } from '../../utils/emitter';
-class ModalUser extends Component {
+import _ from 'lodash';
+class ModalEditUser extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            id: '',
             email: '',
             password: '',
             firstName: '',
             lastName: '',
             address: '',
         }
-
-        this.listenToEmitter();
-    }
-
-    listenToEmitter() {
-        emitter.on('EVENT_CLEAR_MODAL_DATA', () => {
-            // reset state
-            this.setState({
-                email: '',
-                password: '',
-                firstName: '',
-                lastName: '',
-                address: '',
-            })
-        })
     }
 
     componentDidMount() {
+        let user = this.props.currentUser;
+        if(user && !_.isEmpty(user)) {
+            this.setState({
+                id: user.id,
+                email: user.email,
+                password: 'hasdCode',
+                firstName: user.firstName,
+                lastName: user.lastName,
+                address: user.address,
+            })
+        }
+        console.log('didmout edit modal: ', this.props.currentUser)
     }
 
     toggle = () => {
@@ -40,14 +37,6 @@ class ModalUser extends Component {
     }
 
     handleOnChageInput = (event, id) => {
-        // bad code
-        // this.state[id] = event.target.value;
-        // this.setState({
-        //     ...this.state 
-        // }, ()=> {
-        //     console.log('check bad state', this.state)
-        // })
-
         // good code
         let copyState = {...this.state};
         copyState[id] = event.target.value;
@@ -70,11 +59,11 @@ class ModalUser extends Component {
         return isValid;
     }
 
-    handleAddNewUser = () => {
+    handleSaveUser = () => {
         let isValid = this.checkValiDateInput();
         if(isValid === true) {
-            // Call API create modal
-            this.props.createNewUser(this.state);
+            // Call API edit user modal
+            this.props.editUser(this.state);
         }
     }
 
@@ -82,35 +71,37 @@ class ModalUser extends Component {
         return (
             <Modal 
                 isOpen={this.props.isOpen} 
-                toggle={()=> { this.toggle() }} 
+                toggle={()=>this.toggle()} 
                 className={'modal-user-container'}
                 size = "lg"
                 
             >
-          <ModalHeader toggle={()=>{this.toggle()}}>Create a new user</ModalHeader>
+          <ModalHeader toggle={()=>this.toggle()}>Edit a new user</ModalHeader>
           <ModalBody>
             <div className='modal-user-body'>
                     <div className='input-container'>
                         <label>Email</label>
                         <input 
                             type='text' 
-                            onChange={(event)=>{this.handleOnChageInput(event, "email")}}
+                            onChange={(event)=>this.handleOnChageInput(event, "email")}
                             value={this.state.email}
+                            disabled
                         />
                     </div>
                     <div className='input-container'>
                         <label>Password</label>
                         <input 
                             type='password' 
-                            onChange={(event)=> {this.handleOnChageInput(event, "password")}}
+                            onChange={(event)=>this.handleOnChageInput(event, "password")}
                             value={this.state.password}
+                            disabled
                         />
                     </div>
                     <div className='input-container'>
                         <label>First Name</label>
                         <input 
                             type='text'
-                            onChange={(event)=> {this.handleOnChageInput(event, "firstName")}}
+                            onChange={(event)=>this.handleOnChageInput(event, "firstName")}
                             value={this.state.firstName}
                         />
                     </div>
@@ -118,7 +109,7 @@ class ModalUser extends Component {
                         <label>Last Name</label>
                         <input 
                             type='text'
-                            onChange={(event)=> {this.handleOnChageInput(event, "lastName")}}
+                            onChange={(event)=>this.handleOnChageInput(event, "lastName")}
                             value={this.state.lastName}
                         />
                     </div>
@@ -126,7 +117,7 @@ class ModalUser extends Component {
                         <label>Address</label>
                         <input 
                             type='text'
-                            onChange={(event)=>{this.handleOnChageInput(event, "address")}}
+                            onChange={(event)=>this.handleOnChageInput(event, "address")}
                             value={this.state.address}
                         />
                     </div>
@@ -138,8 +129,8 @@ class ModalUser extends Component {
             <Button 
             color="primary" 
             className='px-3' 
-            onClick={()=>{this.handleAddNewUser()}}>Add new</Button>{' '}
-            <Button color="secondary" className='px-3' onClick={()=> {this.toggle()}}>Close</Button>
+            onClick={()=>this.handleSaveUser()}>Save changes</Button>{' '}
+            <Button color="secondary" className='px-3' onClick={()=>this.toggle()}>Close</Button>
           </ModalFooter>
         </Modal>
         )
@@ -157,7 +148,7 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalEditUser);
 
 
 
