@@ -1,0 +1,87 @@
+.section-specialty {
+    height: 330px;
+    background: f5f5f5;
+    border: 1px solid red;
+    
+    .specialty-container {
+        margin: 0 180px;
+        display: flex;
+        flex-direction: column;
+
+        .specialty-header {
+            height: 60px;
+            margin-bottom: 30px;
+            padding-top: 30px;
+
+            .tittle-section {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .btn-section {
+                float: right;
+                padding: 10px 15px;
+                display: block;
+                border: none;
+                outline: none;
+                background: #ebebeb;
+                color: black;
+                text-transform: uppercase;
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                    opacity: 0.9;
+                    background-color: yellow;
+                }
+            }
+        }
+
+        .specialty-body {
+
+            .specialty-customize {
+
+                .bg-image {
+                    height: 150px;
+                    width: 278px;
+                    background: url("../../../assets/specialty/co-ham-mat.jpg");
+                    background-position: center center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-color: #eee;
+                }
+            }
+
+            // reset slick slider css
+            .slick-prev {
+             z-index: 1000 !important;
+             left: -10px !important;
+             height: 48px !important;
+             width: 44px !important;
+             background: #fff !important;
+             border: 2px solid #d7d7d7 !important;
+             &:hover {
+                    background: #fcfafa !important;
+                }
+            }
+            .slick-prev::before, .slick-next::before {
+             font-family: FontAwesome !important;
+             color: aqua !important;
+            }
+
+            .slick-next {
+             z-index: 1000 !important;
+             right: 5px !important;
+             height: 48px !important;
+             width: 44px !important;
+             background: #fff !important;
+             border: 2px solid #d7d7d7 !important;
+             &:hover {
+                    background: #fcfafa !important;
+             }
+            }
+        }
+    }
+}
+
+
+
