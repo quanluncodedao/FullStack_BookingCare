@@ -1,0 +1,136 @@
+// reset slick slider css
+.slick-prev {
+    z-index: 1000 !important;
+    left: -10px !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #d7d7d7 !important;
+    &:hover {
+           background: #fcfafa !important;
+       }
+   }
+   .slick-prev::before, .slick-next::before {
+    font-family: FontAwesome !important;
+    color: aqua !important;
+   }
+
+   .slick-next {
+    z-index: 1000 !important;
+    right: 5px !important;
+    height: 48px !important;
+    width: 44px !important;
+    background: #fff !important;
+    border: 2px solid #d7d7d7 !important;
+    &:hover {
+           background: #fcfafa !important;
+    }
+   }
+
+   .section-share {
+        &.section-specialty {
+            background: f5f5f5;
+            background-color: #eee;
+        }
+        &.section-outstanding-doctor {
+            // background-color: #6df794;
+            background-color: #eee;
+        }
+        &.section-HandBook {
+            // background-color: #addae9;
+        }
+    
+    .section-body {
+
+        .section-customize {
+
+            .bg-image {
+                height: 150px;
+                width: 278px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-color: #eee;
+
+                &.section-specialty {
+                    background-image: url("../../assets/specialty/chuyen-khoa.jpg");
+                }
+
+                &.section-medical-facility {
+                    background-image: url("../../assets/medical-facility/bv-Viet-Duc.jpg");
+                }
+
+                &.section-outstanding-doctor {
+                    background-image: url("../../assets/outstanding-doctor/bs-shin.jpg");
+                        width: 120px;
+                        height: 120px;
+                        border-radius: 50%;
+                }
+
+                &.section-HandBook {
+                    background-image: url("../../assets/handbook/kham-u-tuyen-giap-o-dau-tot.png");
+                }
+            }
+        }
+    }
+   }
+
+   .section-share {
+    height: 330px;
+    
+    
+    
+    .section-container {
+        margin: 0 180px;
+        display: flex;
+        flex-direction: column;
+
+        .section-header {
+            height: 60px;
+            margin-bottom: 30px;
+            padding-top: 30px;
+
+            .tittle-section {
+                font-size: 22px;
+                font-weight: 600;
+            }
+
+            .btn-section {
+                float: right;
+                padding: 10px 15px;
+                display: block;
+                border: none;
+                outline: none;
+                background: #ebebeb;
+                color: black;
+                text-transform: uppercase;
+                &:hover {
+                    color: #fff;
+                    cursor: pointer;
+                    opacity: 0.9;
+                    background-color: yellow;
+                }
+            }
+        }
+
+     
+    }
+}
+
+    .section-outstanding-doctor {
+        .outer-bg {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .section-customize {
+            padding: 5px;   
+
+            .customize-border {
+                border: 1px solid #8deab0;
+                padding: 20px;
+            }
+        }
+    }
+
+
