@@ -80,7 +80,7 @@ let updateUserData = (data) => {
                 user.lastName = data.lastName;
                 user.address = data.address;
                 await user.save();
-                let allUsers = db.User.findAll();
+                let allUsers = await db.User.findAll();
                 resolve(allUsers);
             }
             else {
