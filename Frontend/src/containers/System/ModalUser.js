@@ -49,10 +49,10 @@ class ModalUser extends Component {
         // })
 
         // good code
-        let copyState = {...this.state};
-        copyState[id] = event.target.value;
+        let copyState = {...this.state}; // copy lại các state dc khai bao ở trên và gán cho copyState
+        copyState[id] = event.target.value; //dùng để modify gian tiep các giá trị trong state
         this.setState({
-            ...copyState
+            ...copyState // copy lại các giá trị đã được sửa đổi
         })
     }
 
@@ -71,7 +71,7 @@ class ModalUser extends Component {
     }
 
     handleAddNewUser = () => {
-        let isValid = this.checkValiDateInput();
+        let isValid = this.checkValiDateInput(); // call function check validateInput
         if(isValid === true) {
             // Call API create modal
             this.props.createNewUser(this.state);
@@ -95,7 +95,7 @@ class ModalUser extends Component {
                         <input 
                             type='text' 
                             onChange={(event)=>{this.handleOnChageInput(event, "email")}}
-                            value={this.state.email}
+                            value={this.state.email} // set gia tri lay theo state
                         />
                     </div>
                     <div className='input-container'>
@@ -119,7 +119,7 @@ class ModalUser extends Component {
                         <input 
                             type='text'
                             onChange={(event)=> {this.handleOnChageInput(event, "lastName")}}
-                            value={this.state.lastName}
+                            value={this.state.lastName} 
                         />
                     </div>
                     <div className='input-container max-width-input'>

@@ -14,7 +14,7 @@ class About extends Component {
                 </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
-                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/cUmpJ2zwfVU?list=RDcUmpJ2zwfVU" title="SUÝT NỮA THÌ | OFFICIAL OST | CHUYẾN ĐI CỦA THANH XUÂN | ANDIEZ x BITI&#39;S HUNTER | LYRIC VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe width="100%" height="400px" src="https://www.youtube.com/embed/cUmpJ2zwfVU?list=RDcUmpJ2zwfVU" title="SUÝT NỮA THÌ | OFFICIAL OST | CHUYẾN ĐI CỦA THANH XUÂN | ANDIEZ x BITI&#39;S HUNTER | LYRIC VIDEO" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     </div>
                     <div className='content-right'>
                         <p> - Dành tặng những rung động thanh xuân này cho những người bạn từng tiếc nuối “Suýt nữa thì…” trước crush của mình hay cho cả những mối tình chưa kịp thổ lộ nhé 😉<br></br>
