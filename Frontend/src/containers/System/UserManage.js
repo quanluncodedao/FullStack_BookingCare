@@ -24,10 +24,10 @@ class UserManage extends Component {
     }
 
      getAllUsersFromReact = async () => {
-        let response = await getAllUsers('ALL');
+        let response = await getAllUsers("ALL");
         if(response && response.errCode === 0) {
             this.setState({
-                arrUsers: response.users
+                arrUsers: response.users,
             })
         }
     }
@@ -144,7 +144,7 @@ class UserManage extends Component {
                         <th>Address</th>
                         <th>PhoneNumber</th>
                         <th>Gender</th>
-                        <th>Image</th>
+                        {/* <th>Image</th> */}
                         <th>RoleId</th>
                         <th>Action</th>                        
                     </tr>
@@ -157,7 +157,7 @@ class UserManage extends Component {
                                         <td>{item.address}</td>
                                         <td>{item.phonenumber}</td>
                                         <td>{item.gender}</td>
-                                        <td>{item.image}</td>
+                                        {/* <td>{item.image}</td> */}
                                         <td>{item.roleId}</td>
                                         {/* <td>{item.action}</td> */}
                                         <td>

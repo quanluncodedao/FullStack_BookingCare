@@ -46,7 +46,7 @@ class TableManageUser extends Component {
                         <th>Address</th>
                         <th>PhoneNumber</th>
                         <th>Gender</th>
-                        <th>Image</th>
+                        {/* <th>Image</th> */}
                         <th>RoleId</th>
                         <th>Action</th>                        
                     </tr>
@@ -59,7 +59,7 @@ class TableManageUser extends Component {
                                 <td>{item.address}</td>
                                 <td>{item.phonenumber}</td>
                                 <td>{item.gender}</td>
-                                <td>{item.image}</td>
+                                {/* <td>{item.image}</td> */}
                                 <td>{item.roleId}</td>
                                 <td>
                                     <button 
