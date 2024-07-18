@@ -19,6 +19,11 @@
       border: 1px solid blue;
     }
   }
+  .btn-schedule {
+    &.active {
+      background: orange;
+    }
+  }
   .btn-save-schedule {
     margin-top: 20px;
   }
